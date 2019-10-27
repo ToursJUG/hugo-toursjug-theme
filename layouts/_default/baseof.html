@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="fr">
+{{ partial "head.html" . }}
+<body>
+    before
+    <hr>
+    {{ block "main" . }}
+    {{ end }}
+    <hr>
+    after
+
+    {{ partial "js.html" . }}
+</body>
+</html>
