@@ -13,10 +13,6 @@ body {
   flex-direction: column;
   background: #f7fbfc;
   cursor: default;
-  ::selection {
-    background-color: #473ea2;
-    color: #dbd8f8;
-  }
 }
 
 /* Header & nav bar */
@@ -27,7 +23,10 @@ header {
   a {
     color: #f7fbfc;
   }
-
+  ::selection {
+    background-color: transparent;
+    color: #f7fbfc;
+  }
   ul {
     display: flex;
     flex-wrap: wrap;
@@ -44,6 +43,7 @@ header {
       &.logo {
         flex: 1;
         height: 80px;
+        width: 242px;
         background: url("/images/juggy_head.png") no-repeat left bottom;
       }
       &.toggle {
@@ -86,6 +86,10 @@ main {
       color: #de2217;
     }
   }
+  ::selection {
+    background-color: #473ea2;
+    color: #dbd8f8;
+  }
 }
 
 aside {
@@ -116,6 +120,10 @@ footer {
   }
   p {
     margin: 0.3em 0;
+  }
+  ::selection {
+    background-color: #473ea2;
+    color: #dbd8f8;
   }
 }
 
@@ -149,9 +157,10 @@ footer {
           width: auto;
           padding-bottom: 0.8em;
           align-self: flex-end;
-          font-size: 1em;
+          font-size: 1.05em;
           padding: 0 1em 1em 0;
           white-space: nowrap;
+          background-color: transparent;
         }
         &.toggle {
           display: none;
