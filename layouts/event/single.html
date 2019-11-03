@@ -1,0 +1,22 @@
+{{ define "main" }}
+    {{ .Content }}
+
+
+    <hr/>
+    
+    <hr/>
+    {{ if .Params.docs }}
+        {{ $permalink := .Permalink }}
+        Visualisez les documents de l'évenements
+        <br/>
+        {{ range .Params.docs }}
+            {{ index . 0 }} -  {{ if not (hasPrefix (index . 1) "http") }}{{ $permalink }}{{ end }}{{ index . 1 }} 
+            {{ hasPrefix (index . 1) "http" }}
+            <br/>
+            <a href="{{ if not (hasPrefix (index . 1) "http") }}{{ $permalink }}{{ end }}{{ index . 1 }}">
+            {{ index . 0 }}
+            </a>
+            <br/>
+        {{ end }}
+    {{ end }}
+{{ end }}

@@ -1,4 +1,32 @@
 {{ define "main" }}
-    <h1>Main from index / theme</h1>
-    
+
+{{ range first 1 (where .Site.Pages "Section" "about") }}
+{{ if .Content }}
+<div>
+    <div>
+        {{ .Summary }}
+    </div>
+    {{ if .Truncated }}
+    <div>
+        mailing list inscription
+    </div>
+    {{ end }}
+    {{ end }}
+</div>
+{{ else }}
+{{ end }}
+
+
+{{ range where .Pages "Section" "event" }}
+
+{{ range last 1 (where .Pages "Date" "ge" now) }}
+    <div>
+        <h2>Rencontre a venir (THE ONE)</h2>
+    {{ .Title }} - <span>{{ .Date.Format "2 January at 3:04pm" }} at {{ .Params.place }}</span></br><br />
+    {{ else }}
+    Aucun evenemnt de planifié
+    {{ end }}
+    </div>
+{{ end }}
+
 {{ end }}

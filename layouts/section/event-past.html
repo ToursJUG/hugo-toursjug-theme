@@ -1,0 +1,21 @@
+{{ define "main" }}
+    <h1>Les evements passés</h1>
+    {{ range where .Site.Pages "Section" "event" }}
+        {{ range (where .Pages "Date" "lt" now).GroupByDate "2006"   }}
+            <div>
+            <h3>{{ .Key }}</h3>
+            {{ range .Pages }}
+            <div>
+            <a href='{{ .RelPermalink }}'>{{ .Title }}</a>- <span>{{ .Date.Format "2 January 2006 at 3:04pm" }} at {{ .Params.place }}</span>
+            </div>
+            {{ end }}
+            </div>
+        {{ end }}
+     
+<br/>
+    
+  
+    {{ end }}
+
+
+{{ end }}

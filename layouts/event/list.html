@@ -1,0 +1,15 @@
+{{ define "main" }}
+<h1>Les prochains evements</h1>
+{{ range (where .Pages.Reverse "Date" "ge" now) }}
+    <div>
+    {{ .Title }} - <span>{{ .Date.Format "2 January at 3:04pm" }} at {{ .Params.place }}</span>
+    </div>
+{{ else }}
+    <div>
+    dommage
+    </div>
+{{ end }}
+<div>
+<a href="{{ .Site.BaseURL }}event-past">evements passés</a>
+</div>
+{{ end }}
