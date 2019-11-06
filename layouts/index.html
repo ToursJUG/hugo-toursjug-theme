@@ -18,7 +18,6 @@
 <h4 class="event-title">Prochaine soirée</h4>
 {{ range last 1 (where .Pages "Date" "ge" now) }}
 <div class="event follow" onclick="location = '{{ .RelPermalink }}'">
-    <h1>oups</h1>
     <div class="title">
         <span>{{ .Title }}</span><span class="event-date">{{ .Date.Format "02 January" }}</span>
     </div>
