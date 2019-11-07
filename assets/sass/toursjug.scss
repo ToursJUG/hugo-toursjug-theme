@@ -65,9 +65,6 @@ h3 {
 h4 {
   font-size: 1.3em;
   letter-spacing: 0.1em;
-  &.event-title {
-    border-bottom: 1px solid;    
-  }
 }
 
 p {
@@ -208,12 +205,19 @@ aside {
   margin: 1em 0;
 }
 
+.event-title {
+  border-bottom: 1px solid;    
+}
+
 .event {
   display: flex;
   flex-direction: column;
   background: transparent;
   padding: 0.3em;
   border-radius: 0.5em;
+  &.list {
+    margin-bottom: 1em;
+  }
   &.follow {
     p:nth-last-child(2){
       margin-bottom: 0;
@@ -247,6 +251,18 @@ aside {
       color: rgba(118, 159, 205, 0.7);
     }
   }
+  .information {
+    padding-left: 2em;
+    color: rgba(118, 159, 205, 1);
+    span:first-child {
+      margin-right: 0.3em;
+    }
+  }
+}
+
+.next-event {
+  display: flex;
+  flex-direction: column;
 }
 
 .no-event {

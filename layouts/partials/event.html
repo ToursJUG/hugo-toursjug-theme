@@ -1,0 +1,22 @@
+<div class="event follow list" onclick="location = '{{ .RelPermalink }}'">
+    <div class="title {{ if not .IsHome }} event-title {{ end }}">
+        {{ partial "event-title-text.html" . }}
+    </div>
+    {{ partial "event-summary.html" . }} 
+    <div class="information">
+        <div>
+            <span>Heure:</span><span>{{ .Date.Format "15:04" }}</span>
+        </div>
+        <div>
+            <span>lieu:</span>
+            <span>
+                {{ if isset .Params "place" }}
+                {{ .Params.place }}
+                {{ else }}
+                non défini
+                {{ end }}
+            </span>
+        </div>
+    </div>
+    <p class="advice-link">Pour aller à la page de l'evenement, cliquez...</p>
+</div>
