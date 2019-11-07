@@ -8,7 +8,6 @@
 @import url("https://fonts.googleapis.com/css?family=Raleway&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Indie+Flower&display=swap"); /* Pour les note et le mot d'excuse pour l'absence de soirée... */
 
-
 @font-face {
   font-family: "PixelCode";
   src: url("../fonts/ONESIZE_.TTF");
@@ -93,8 +92,12 @@ ul {
       * {
         align-self: center;
         margin-right: 0.2em;
+        fill: #036cad;
       }
-  }
+      img {
+        fill: #036cad;
+      }
+    }
   }
 }
 #container {
@@ -225,7 +228,7 @@ aside {
 }
 
 .event-title {
-  border-bottom: 1px solid;    
+  border-bottom: 1px solid;
   &.year {
     margin: 0.5em 0 0.2em 0;
   }
@@ -241,7 +244,7 @@ aside {
     margin-bottom: 1em;
   }
   &.follow {
-    p:nth-last-child(2){
+    p:nth-last-child(2) {
       margin-bottom: 0;
       padding-bottom: 0;
     }
@@ -249,7 +252,7 @@ aside {
       background-color: rgba(255, 195, 104, 0.3);
       cursor: pointer;
       p {
-        &.advice-link{
+        &.advice-link {
           color: rgba(118, 159, 205, 1);
         }
       }

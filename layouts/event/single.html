@@ -12,7 +12,11 @@ Visualisez les documents de l'évenement
 <ul class="document">
     {{ range .Params.docs }}
     <li>
-            <img src="/images/css/document.svg">
+            {{ if (hasPrefix (index . 1) "http") }}
+            <img src="/images/css/open_in_browser-24px.svg">
+            {{ else }}
+            <img src="/images/css/file_copy-24px.svg">
+            {{ end }}
         <a href="{{ if not (hasPrefix (index . 1) "http") }}{{ $permalink }}{{ end }}{{ index . 1 }}">
             {{ index . 0 }}
         </a>
