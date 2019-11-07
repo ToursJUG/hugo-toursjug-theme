@@ -1,20 +1,23 @@
 {{ define "main" }}
-    <div>
+<div>
     {{ .Content }}
-    </div>
+</div>
 
-    <hr/>
-    
-    <hr/>
-    {{ if .Params.docs }}
-        {{ $permalink := .Permalink }}
-        Visualisez les documents de l'évenements
-        <br/>
-        {{ range .Params.docs }}
-            <a href="{{ if not (hasPrefix (index . 1) "http") }}{{ $permalink }}{{ end }}{{ index . 1 }}">
+<hr />
+
+<hr />
+{{ if .Params.docs }}
+{{ $permalink := .Permalink }}
+Visualisez les documents de l'évenement
+<ul class="document">
+    {{ range .Params.docs }}
+    <li>
+            <img src="/images/css/document.svg">
+        <a href="{{ if not (hasPrefix (index . 1) "http") }}{{ $permalink }}{{ end }}{{ index . 1 }}">
             {{ index . 0 }}
-            </a>
-            <br/>
-        {{ end }}
+        </a>
+    </li>
     {{ end }}
+</ul>
+{{ end }}
 {{ end }}

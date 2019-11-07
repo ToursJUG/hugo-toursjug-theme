@@ -83,6 +83,20 @@ strong {
   font-weight: bold;
 }
 
+ul {
+  &.document {
+    list-style: none;
+    padding: 0.2em 0 0.4em 1em;
+    li {
+      padding: 0.3em 0 0 0;
+      display: flex;
+      * {
+        align-self: center;
+        margin-right: 0.2em;
+      }
+  }
+  }
+}
 #container {
   /*
   font-family: "Ubuntu", sans-serif;
