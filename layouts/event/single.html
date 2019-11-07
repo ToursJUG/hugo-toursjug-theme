@@ -1,14 +1,11 @@
 {{ define "main" }}
-<div>
+<div class="event">
     {{ .Content }}
 </div>
 
-<hr />
-
-<hr />
 {{ if .Params.docs }}
 {{ $permalink := .Permalink }}
-Visualisez les documents de l'évenement
+<h5 class="event-title">Visualisez les documents de l'évenement</h5>
 <ul class="document">
     {{ range .Params.docs }}
     <li>
