@@ -1,10 +1,13 @@
 /* rouge du bec : #DE2217 rgb(222, 34, 22) */
 /* theme couleur : https://colorhunt.co/palette/33990 */
+/*
 @import url("https://fonts.googleapis.com/css?family=Ubuntu&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Raleway&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap");
-
+*/
+@import url("https://fonts.googleapis.com/css?family=Raleway&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Indie+Flower&display=swap"); /* Pour les note et le mot d'excuse pour l'absence de soirée... */
+
 
 @font-face {
   font-family: "PixelCode";
@@ -81,10 +84,12 @@ strong {
 }
 
 #container {
+  /*
   font-family: "Ubuntu", sans-serif;
   font-family: "Press Start 2P", cursive;
   font-family: "Pixel", cursive;
   font-family: "Ubuntu", sans-serif;
+  */
 
   font-family: "Indie Flower", cursive; /* Pour les note et le mot d'excuse pour l'absence de soirée... */
 
@@ -207,6 +212,9 @@ aside {
 
 .event-title {
   border-bottom: 1px solid;    
+  &.year {
+    margin: 0.5em 0 0.2em 0;
+  }
 }
 
 .event {
@@ -238,6 +246,9 @@ aside {
     display: flex;
     justify-content: space-between;
     margin-bottom: 0.5em;
+    &.no-margin {
+      margin-bottom: 0;
+    }
     .event-date {
       align-self: flex-end;
     }
@@ -272,6 +283,7 @@ aside {
   margin-bottom: 2em;
   h4 {
     align-self: center;
+    font-family: "Indie Flower", cursive;
   }
 }
 
