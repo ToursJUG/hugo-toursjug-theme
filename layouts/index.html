@@ -17,18 +17,7 @@
 
 <h4 class="event-title">Prochaine soirée</h4>
 {{ range last 1 (where .Pages "Date" "ge" now) }}
-<div class="event follow" onclick="location = '{{ .RelPermalink }}'">
-    <div class="title">
-        <span>{{ .Title }}</span><span class="event-date">{{ .Date.Format "02 January" }}</span>
-    </div>
-    {{ if isset .Params "intro" }}
-    {{ .Params.intro | markdownify }}
-    {{ else }}
-    {{ .Summary }}
-    {{ end }}
-    <p class="advice-link">Pour aller à la page de l'evenement, cliquez...</p>
-    
-</div>
+{{ partial "event-home.html" . }}
 {{ else }}
 <div class="no-event">
         <img src="images/duke_01_200.png">
