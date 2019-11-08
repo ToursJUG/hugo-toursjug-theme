@@ -1,4 +1,18 @@
 {{ define "main" }}
+<h1>{{ .Title }}</h1>
+<div class="event-info">
+    <div>
+            <span>Date:</span>{{ .Date.Format "Monday 2 Jan 2006" }}
+    </div>
+    <div>
+            <span>Heure:</span>{{ .Date.Format "15:04" }}
+    </div>
+    {{ if isset .Params "place" }}
+    <div>
+            <span>Lieu:</span>{{ .Params.place }}
+    </div>
+    {{ end }}
+</div>
 <div class="event">
     {{ .Content }}
 </div>
