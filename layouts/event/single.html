@@ -1,20 +1,38 @@
 {{ define "main" }}
+<h1>{{ .Title }}</h1>
+<div class="event-info">
     <div>
-    {{ .Content }}
+            <span>Date:</span>{{ .Date.Format "Monday 2 Jan 2006" }}
     </div>
-
-    <hr/>
-    
-    <hr/>
-    {{ if .Params.docs }}
-        {{ $permalink := .Permalink }}
-        Visualisez les documents de l'évenements
-        <br/>
-        {{ range .Params.docs }}
-            <a href="{{ if not (hasPrefix (index . 1) "http") }}{{ $permalink }}{{ end }}{{ index . 1 }}">
-            {{ index . 0 }}
-            </a>
-            <br/>
-        {{ end }}
+    <div>
+            <span>Heure:</span>{{ .Date.Format "15:04" }}
+    </div>
+    {{ if isset .Params "place" }}
+    <div>
+            <span>Lieu:</span>{{ .Params.place }}
+    </div>
     {{ end }}
+</div>
+<div class="event">
+    {{ .Content }}
+</div>
+
+{{ if .Params.docs }}
+{{ $permalink := .Permalink }}
+<h5 class="event-title">Visualisez les documents de l'évenement</h5>
+<ul class="document">
+    {{ range .Params.docs }}
+    <li>
+            {{ if (hasPrefix (index . 1) "http") }}
+            <img src="/images/css/open_in_browser-24px.svg">
+            {{ else }}
+            <img src="/images/css/file_copy-24px.svg">
+            {{ end }}
+        <a href="{{ if not (hasPrefix (index . 1) "http") }}{{ $permalink }}{{ end }}{{ index . 1 }}">
+            {{ index . 0 }}
+        </a>
+    </li>
+    {{ end }}
+</ul>
+{{ end }}
 {{ end }}

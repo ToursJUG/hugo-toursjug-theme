@@ -8,7 +8,6 @@
 @import url("https://fonts.googleapis.com/css?family=Raleway&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Indie+Flower&display=swap"); /* Pour les note et le mot d'excuse pour l'absence de soirée... */
 
-
 @font-face {
   font-family: "PixelCode";
   src: url("../fonts/ONESIZE_.TTF");
@@ -47,7 +46,8 @@ body {
 h1,
 h2,
 h3,
-h4 {
+h4,
+h5 {
   margin: 1em 0 0.8em 0;
   font-weight: bold;
 }
@@ -70,6 +70,12 @@ h4 {
   letter-spacing: 0.1em;
 }
 
+h5 {
+  font-size: 1.1em;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.3em;
+}
+
 p {
   margin: 0 0 0.5em 0;
   line-height: 1.3em;
@@ -83,6 +89,23 @@ strong {
   font-weight: bold;
 }
 
+ul {
+  &.document {
+    list-style: none;
+    padding: 0.2em 0 0.4em 1em;
+    li {
+      padding: 0.3em 0 0 0;
+      display: flex;
+      * {
+        align-self: center;
+        margin-right: 0.2em;
+      }
+      img {
+        fill: #036cad;
+      }
+    }
+  }
+}
 #container {
   /*
   font-family: "Ubuntu", sans-serif;
@@ -211,7 +234,7 @@ aside {
 }
 
 .event-title {
-  border-bottom: 1px solid;    
+  border-bottom: 1px solid;
   &.year {
     margin: 0.5em 0 0.2em 0;
   }
@@ -223,11 +246,17 @@ aside {
   background: transparent;
   padding: 0.3em;
   border-radius: 0.5em;
+  h2,
+  h3,
+  h4,
+  h5 {
+    align-self: flex-start;
+  }
   &.list {
     margin-bottom: 1em;
   }
   &.follow {
-    p:nth-last-child(2){
+    p:nth-last-child(2) {
       margin-bottom: 0;
       padding-bottom: 0;
     }
@@ -235,7 +264,7 @@ aside {
       background-color: rgba(255, 195, 104, 0.3);
       cursor: pointer;
       p {
-        &.advice-link{
+        &.advice-link {
           color: rgba(118, 159, 205, 1);
         }
       }
@@ -284,6 +313,19 @@ aside {
   h4 {
     align-self: center;
     font-family: "Indie Flower", cursive;
+  }
+}
+
+.event-info {
+  display: flex;
+  flex-direction: column;
+div {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 0.4em;
+    * {
+      margin-right: 0.3em;
+    }
   }
 }
 
