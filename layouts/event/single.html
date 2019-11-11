@@ -15,14 +15,19 @@
             <span>Heure :</span><span class="event-information">{{ .Date.Format "15:04" }}</span>
     </div>
     {{ end }}
-    {{ if isset .Params "place" }}
     <div>
             <span>Lieu :</span>
+            {{ if isset .Params "place" }}
             <span class="event-information">
                 {{ .Params.place }}
             </span>
+            {{ else }}
+            <span class="event-information undefined">
+                non défini
+            </span>
+            {{ end }}
     </div>
-    {{ end }}
+    
 </div>
 <h5 class="event-title">Détails</h5>
 <div class="event">
