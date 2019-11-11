@@ -4,12 +4,7 @@
     <li class="logo" {{ if not .IsHome }}onclick="location = '{{ .Site.BaseURL }}'" style="cursor: pointer;" {{ end }}>
     </li>
     <li class="menu-item">
-        <a
-        {{ if gt (len (where (where .Site.RegularPages "Section" "event") "Date" "ge" now)) 0  }}
-        href="{{ .Site.BaseURL }}event"
-        {{ else }}
-        href="{{ .Site.BaseURL }}event-past"
-        {{ end }}
+        <a href="{{ .Site.BaseURL }}event"
         >
         {{ with .Site.Params.events }}{{ . }}{{ else }}Evenements{{ end }}
     </a></li>
