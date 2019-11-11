@@ -1,0 +1,6 @@
+{{ define "main" }}
+<h1>Les speakers</h1>
+{{ range .Pages }}
+<h5><a href="{{ .Permalink }}">{{ .Title }}</a></h5>
+{{ end }}
+{{ end }}
