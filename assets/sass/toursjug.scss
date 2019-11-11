@@ -40,6 +40,7 @@
 body {
   color: #769fcd;
   color: #036cad;
+  color: black;
   font-size: 20px;
 }
 
@@ -50,6 +51,7 @@ h4,
 h5 {
   margin: 1em 0 0.8em 0;
   font-weight: bold;
+  color: #036cad;
 }
 h1 {
   font-size: 2em;
@@ -241,6 +243,7 @@ aside {
 }
 
 .event {
+  color: black;
   display: flex;
   flex-direction: column;
   background: transparent;
@@ -327,6 +330,17 @@ div {
       margin-right: 0.3em;
     }
   }
+}
+
+.event-speakers {
+  font-size: 0.9em;
+  color: #036cad;
+  padding-left: 3em;
+}
+
+.event-information {
+  color: #635ab9;
+  font-weight: bold;
 }
 
 footer {
