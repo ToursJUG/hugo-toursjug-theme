@@ -355,6 +355,10 @@ div {
 .event-information {
   color: #635ab9;
   font-weight: bold;
+  &.undefined {
+    color: #ada6d8;
+    font-weight: normal;
+  }
 }
 
 footer {
