@@ -5,10 +5,10 @@
     {{ partial "event-summary.html" . }} 
     <div class="information">
         <div>
-            <span>Heure:</span><span>{{ .Date.Format "15:04" }}</span>
+            <span>Heure :</span><span>{{ .Date.Format "15:04" }}</span>
         </div>
         <div>
-            <span>lieu:</span>
+            <span>Lieu :</span>
             <span>
                 {{ if isset .Params "place" }}
                 {{ .Params.place }}

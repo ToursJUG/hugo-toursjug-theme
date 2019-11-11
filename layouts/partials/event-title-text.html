@@ -1,1 +1,8 @@
-<span>{{ .Title }}</span><span class="event-date">{{ .Date.Format "02 January" }}</span>
+<span>{{ .Title }}</span>
+<span class="event-date">
+    {{ if lt .Date now }}
+    {{ .Date.Format "02 January" }}
+    {{ else }}
+        {{ .Date.Format "02 January 2006" }}
+    {{ end }}
+</span>

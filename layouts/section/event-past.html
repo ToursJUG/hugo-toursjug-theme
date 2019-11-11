@@ -1,5 +1,5 @@
 {{ define "main" }}
-<h1>Les evements passés</h1>
+<h1>Les évenements passés</h1>
 {{ range where .Site.Pages "Section" "event" }}
 {{ range (where .Pages "Date" "lt" now).GroupByDate "2006"   }}
 <div>
@@ -9,6 +9,14 @@
     <div class="event follow" onclick="location = '{{ .RelPermalink }}'">
         <div class="title no-margin">
             {{ partial "event-title-text.html" . }}
+        </div>
+        <div class="event-speakers">
+            {{ if isset .Params "speakers" }}
+            
+            <span>
+            {{ delimit .Params.speakers ", " }}
+            </span>
+            {{ end }}
         </div>
     </div>
     {{ end }}
