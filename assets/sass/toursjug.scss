@@ -297,9 +297,10 @@ aside {
   }
   .information {
     padding-left: 2em;
-    color: rgba(118, 159, 205, 1);
+    
     span:first-child {
       margin-right: 0.3em;
+      color: rgba(118, 159, 205, 1);
     }
   }
   code {
