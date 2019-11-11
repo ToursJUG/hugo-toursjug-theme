@@ -33,14 +33,22 @@
 <div class="event">
     {{ .Content }}
 </div>
+
+{{ if isset .Params "speakers" }}
+{{ $a := slice "" }}
+{{ range where .Site.Pages "Section" "speaker" }}
+{{ range .Pages }}
+{{ $a = $a | append (slice .Title) }}
+{{ end }}
+{{ end }}
 <div>
-    {{ if isset .Params "speakers" }}
     <span>
-        Intervenant{{ if gt (len .Params.speakers) 1  }}s{{ end }} : 
-        {{ delimit .Params.speakers ", " }}
+        <span class="speaker-title">Intervenant{{ if gt (len .Params.speakers) 1  }}s{{ end }} :</span>
+        <span class="speaker-list">{{ range .Params.speakers }}<span>{{ if in $a . }}{{ $speakerPath := print "speaker/" (urlize .) | absURL }}<a href="{{ $speakerPath }}">{{- . -}}</a>{{ else }}{{- . -}}{{ end }}</span>{{ end }}</span>
     </span>
-    {{ end }}
 </div>
+{{ end }}
+
 {{ if .Params.docs }}
 {{ $permalink := .Permalink }}
 <h5 class="event-title">Visualisez les documents de l'évenement</h5>
