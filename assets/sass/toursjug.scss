@@ -265,6 +265,7 @@ aside {
       padding-bottom: 0;
     }
     &:hover {
+      transition: 0.5s ease-out;
       background-color: rgba(255, 195, 104, 0.3);
       cursor: pointer;
       p {
@@ -278,7 +279,7 @@ aside {
     font-size: 1.2em;
     display: flex;
     justify-content: space-between;
-    margin-bottom: 0.5em;
+    margin-bottom: 0.2em;
     &.no-margin {
       margin-bottom: 0;
     }
@@ -288,6 +289,15 @@ aside {
     .event-date {
       align-self: flex-end;
     }
+  }
+  .informations {
+    font-size: 0.9em;
+    display: flex;
+    color: rgba(118, 159, 205, 1);
+    color: #036cad;
+    padding: 0 1.5em;
+    justify-content: space-between;
+    margin-bottom: 0.3em;;
   }
   p {
     &.advice-link {
@@ -299,7 +309,7 @@ aside {
     }
   }
   .information {
-    padding-left: 2em;
+    padding-left: 3em;
 
     span:first-child {
       margin-right: 0.3em;
@@ -352,11 +362,13 @@ aside {
 .event-speakers {
   font-size: 0.9em;
   color: #036cad;
-  padding-left: 3em;
+  padding-left: 1.5em;
+  &.next {
+    margin-bottom: 0.5em;
+  }
 }
 
 .event-information {
-  color: #635ab9;
   font-weight: bold;
   &.undefined {
     color: #ada6d8;
