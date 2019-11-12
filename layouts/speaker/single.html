@@ -12,7 +12,7 @@
             <div class="title no-margin sublist">
                     <span>{{ .Title }}</span>
                     <span class="event-date">
-                            {{ .Date.Format "02 January 2006" }}
+                                {{ partial "datemonthyear.html" . }}
                     </span>
             </div>
         </div>
