@@ -4,15 +4,15 @@
     <div>
             <span>Date :</span>
             {{ if ge .Date now }}
-            <span class="event-information">{{ .Date.Format "Monday 2 January 2006" }}</span>
+            <span class="event-information">{{ partial "datefull.html" . }}</span>
             {{ else }}
-            {{ $eventTime :=  .Date.Format "15:04" }}
-            <span title="Heure: {{ $eventTime }}" class="event-information">{{ .Date.Format "Monday 2 January 2006" }}</span>
+            {{ $eventTime :=  .Date.Format "15h04" }}
+            <span title="Heure: {{ $eventTime }}" class="event-information">{{ partial "datefull.html" . }}</span>
             {{ end }}
     </div>
     {{ if ge .Date now }}
     <div>
-            <span>Heure :</span><span class="event-information">{{ .Date.Format "15:04" }}</span>
+            <span>Heure :</span><span class="event-information">{{ .Date.Format "15h04" }}</span>
     </div>
     {{ end }}
     <div>
@@ -29,6 +29,8 @@
     </div>
     
 </div>
+
+
 <h5 class="event-title">Détails</h5>
 <div class="event">
     {{ .Content }}
