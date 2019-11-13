@@ -297,7 +297,7 @@ aside {
     color: #036cad;
     padding: 0 1.5em;
     justify-content: space-between;
-    margin-bottom: 0.3em;;
+    margin-bottom: 0.3em;
   }
   p {
     &.advice-link {
@@ -387,6 +387,35 @@ aside {
     &:not(:first-child) {
       &::before {
         content: ", ";
+      }
+    }
+  }
+}
+
+.place {
+  display: flex;
+  flex-direction: column;
+  h1 {
+    border-bottom: 1px solid;
+    width: 100%;
+  }
+  .informations {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 1.5em;
+    margin-bottom: 1em;
+    align-items: center;
+    div {
+      img {
+        max-height: 50px;
+      }
+    }
+    .address {
+      display: flex;
+      flex-direction: column;
+      .gmap {
+        margin-top: 0.5em;
+        font-size: 0.8em;;
       }
     }
   }
