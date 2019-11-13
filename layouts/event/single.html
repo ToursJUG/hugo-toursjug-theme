@@ -19,7 +19,20 @@
             <span>Lieu :</span>
             {{ if isset .Params "place" }}
             <span class="event-information">
+                {{ $eventPlace := urlize .Params.place }}
+                {{ .Scratch.Set "placeFound" "" }}
+                {{ range where .Site.Pages "Section" "place" }}
+                {{ range .Pages }}
+                {{ if eq $eventPlace (urlize .Title) }}
+                {{ $.Scratch.Set "placeFound" .Permalink }}
+                {{ end }}
+                {{ end }}
+                {{ end }}
+                {{ if ne (.Scratch.Get "placeFound") "" }}
+                <a href="{{ .Scratch.Get "placeFound" }}">{{ .Params.place }}</a>
+                {{ else }}
                 {{ .Params.place }}
+                {{ end }}
             </span>
             {{ else }}
             <span class="event-information undefined">
