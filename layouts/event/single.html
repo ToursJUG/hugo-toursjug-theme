@@ -2,13 +2,13 @@
 <h2>{{ .Title }}</h2>
 <div class="event-info">
     <div>
-            <span>Date :</span>
-            {{ if ge .Date now }}
-            <span class="event-information">{{ partial "datetimeformated.html" . }}</span>
-            {{ else }}
-            {{ $eventTime :=  .Date.Format "15h04" }}
-            <span title="Heure: {{ $eventTime }}" class="event-information">{{ partial "datefull.html" . }}</span>
-            {{ end }}
+        <span>Date :</span>
+        {{ if ge .Date now }}
+        <span class="event-information">{{ partial "datetimeformated.html" . }}</span>
+        {{ else }}
+        {{ $eventTime :=  .Date.Format "15h04" }}
+        <span title="Heure: {{ $eventTime }}" class="event-information">{{ partial "datefull.html" . }}</span>
+        {{ end }}
     </div>
     <!--
     {{ if ge .Date now }}
@@ -18,35 +18,35 @@
     {{ end }}
     -->
     <div>
-            <span>Lieu :</span>
-            {{ if isset .Params "place" }}
-            <span class="event-information">
-                {{ $eventPlace := urlize .Params.place }}
-                {{ .Scratch.Set "placeFound" "" }}
-                {{ range where .Site.Pages "Section" "place" }}
-                {{ range .Pages }}
-                {{ if eq $eventPlace (urlize .Title) }}
-                {{ $.Scratch.Set "placeFound" .Permalink }}
-                {{ end }}
-                {{ end }}
-                {{ end }}
-                {{ if ne (.Scratch.Get "placeFound") "" }}
-                <a href="{{ .Scratch.Get "placeFound" }}">{{ .Params.place }}</a>
-                {{ else }}
-                {{ .Params.place }}
-                {{ end }}
-            </span>
-            {{ else }}
-            <span class="event-information undefined">
-                non défini
-            </span>
+        <span>Lieu :</span>
+        {{ if isset .Params "place" }}
+        <span class="event-information">
+            {{ $eventPlace := urlize .Params.place }}
+            {{ .Scratch.Set "placeFound" "" }}
+            {{ range where .Site.Pages "Section" "place" }}
+            {{ range .Pages }}
+            {{ if eq $eventPlace (urlize .Title) }}
+            {{ $.Scratch.Set "placeFound" .Permalink }}
             {{ end }}
+            {{ end }}
+            {{ end }}
+            {{ if ne (.Scratch.Get "placeFound") "" }}
+            <a href="{{ .Scratch.Get "placeFound" }}">{{ .Params.place }}</a>
+            {{ else }}
+            {{ .Params.place }}
+            {{ end }}
+        </span>
+        {{ else }}
+        <span class="event-information undefined">
+            non défini
+        </span>
+        {{ end }}
     </div>
     {{ if ge .Date now }}
     {{ if isset .Params "eventbrite" }}
     <div class="susbcribe open">
         {{ $link := (print "https://www.eventbrite.fr/e/" .Params.eventbrite ) }}
-        <a href="{{ $link }}" target="_blank" >Inscrivez vous !</a>
+        <a href="{{ $link }}" target="_blank">Inscrivez vous !</a>
     </div>
     {{else}}
     <div>
@@ -75,10 +75,31 @@
 <div>
     <span>
         <span class="speaker-title">Intervenant{{ if gt (len .Params.speakers) 1  }}s{{ end }} :</span>
-        <span class="speaker-list">{{ range .Params.speakers }}<span>{{ if in $a . }}{{ $speakerPath := print "speaker/" (urlize .) | absURL }}<a href="{{ $speakerPath }}">{{- . -}}</a>{{ else }}{{- . -}}{{ end }}</span>{{ end }}</span>
+        <span class="speaker-list">{{ range .Params.speakers }}<span>{{ if in $a . }}{{ $speakerPath := print "speaker/" (urlize .) | absURL }}<a
+                    href="{{ $speakerPath }}">{{- . -}}</a>{{ else }}{{- . -}}{{ end }}</span>{{ end }}</span>
     </span>
 </div>
 {{ end }}
+
+{{ if and (ge .Date now) (isset .Params "after") }}
+{{ $afterId := .Params.after }}
+{{ .Scratch.Set "afterId" .Params.after }}
+{{ range where .Site.Pages "Section" "after" }}
+{{ range first 1 (where .Pages "after-title" "eq" (.Scratch.Get "afterId")) }}
+<div>
+    <h5 class="event-title">
+        {{ if isset .Params "aftertitle" }}
+        {{ .Params.afterTitle }}
+        {{ else }}
+        After
+        {{ end }}
+    </h5>
+    {{ .Content }}
+</div>
+{{ end }}
+{{ end }}
+{{ end }}
+
 
 {{ if .Params.docs }}
 {{ $permalink := .Permalink }}
@@ -86,11 +107,11 @@
 <ul class="document">
     {{ range .Params.docs }}
     <li>
-            {{ if (hasPrefix (index . 1) "http") }}
-            <img src="/images/css/open_in_browser-24px.svg">
-            {{ else }}
-            <img src="/images/css/file_copy-24px.svg">
-            {{ end }}
+        {{ if (hasPrefix (index . 1) "http") }}
+        <img src="/images/css/open_in_browser-24px.svg">
+        {{ else }}
+        <img src="/images/css/file_copy-24px.svg">
+        {{ end }}
         <a href="{{ if not (hasPrefix (index . 1) "http") }}{{ $permalink }}{{ end }}{{ index . 1 }}">
             {{ index . 0 }}
         </a>
