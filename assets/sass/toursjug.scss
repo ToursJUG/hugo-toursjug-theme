@@ -8,6 +8,7 @@
 @import url("https://fonts.googleapis.com/css?family=Raleway&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Indie+Flower&display=swap"); /* Pour les note et le mot d'excuse pour l'absence de soirée... */
 @import url("https://fonts.googleapis.com/css?family=Anonymous+Pro:400,400i,700,700i&display=swap");
+@import url('https://fonts.googleapis.com/css?family=Baskervville:400,400i&display=swap&subset=latin-ext');
 
 @font-face {
   font-family: "PixelCode";
@@ -454,6 +455,37 @@ aside {
         font-size: 0.8em;
       }
     }
+  }
+}
+
+blockquote {
+  padding-left: 1em;
+  color: #877FD3;
+  font-family: 'Baskervville', serif;
+  font-style: italic;
+  font-size: 1.2em;
+  margin: 1em 0;;
+}
+
+.post-content {
+  ul {
+    list-style: square inside;
+    padding-left: 1em;
+    li {
+      margin: 0.6em 0;
+    }
+  }
+}
+
+.post-information {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: -1em;
+  margin-bottom: 1.5em;
+  font-size: 0.8em;
+  span {
+    margin: 0 0.4em;
   }
 }
 
