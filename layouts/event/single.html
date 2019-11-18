@@ -46,7 +46,8 @@
     {{ if isset .Params "eventbrite" }}
     <div class="susbcribe open">
         {{ $link := (print "https://www.eventbrite.fr/e/" .Params.eventbrite ) }}
-        <a href="{{ $link }}" target="_blank">Inscrivez vous !</a>
+        <!--a href="{{ $link }}" target="_blank">Inscrivez-vous</a-->
+        <div class="button" onclick="window.open('{{ $link }}', '_blank');">Inscrivez-vous</div>
     </div>
     {{else}}
     <div>

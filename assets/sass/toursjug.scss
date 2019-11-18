@@ -347,22 +347,6 @@ aside {
   }
 }
 
-@mixin transition($transition) {
-  -webkit-transition: $transition;
-  -moz-transition: $transition;
-  -ms-transition: $transition;
-  -o-transition: $transition;
-  transition: $transition;
-}
-
-@mixin textShadow($text-shadow) {
-  -webkit-text-shadow: $text-shadow;
-  -moz-text-shadow: $text-shadow;
-  -ms-text-shadow: $text-shadow;
-  -o-text-shadow: $text-shadow;
-  text-shadow: $text-shadow;
-}
-
 .event-info {
   display: flex;
   flex-direction: column;
@@ -379,22 +363,13 @@ aside {
     flex-direction: row;
     &.open {
       justify-content: center;
-      font-size: 1.1em;
+      font-size: 1em;
       font-weight: bold;
-      a {
-        @include transition(0.5s ease-in-out);
-        @include textShadow((0 0 0 transparent, 0 0 0 transparent));
-        overflow: visible;
-        cursor: pointer;
-        color: #635ab9;
-        &:hover {
-          color: #635ab9;
-          @include textShadow((0 0 10px #ffc368, 0 0 50px #036cad));
-        }
-      }
     }
   }
 }
+
+@import 'button-subscribe';
 
 .event-speakers {
   font-size: 0.9em;
