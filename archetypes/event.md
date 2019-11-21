@@ -7,6 +7,7 @@ tags: [
 ]
 event-date: {{ .Date }}
 draft: true
+hideSpeaker: false
 intro: "* Introduction pour l'evenement"
 # place: "" # emplacement de l'evenement
 # speakers: [] # Tableau avec les nom des speakers entre " et séparé par des , et doit être identique au titre du speaker enregistré !
