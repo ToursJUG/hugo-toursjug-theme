@@ -66,6 +66,7 @@
     {{ .Content }}
 </div>
 
+
 {{ if isset .Params "speakers" }}
 {{ $a := slice "" }}
 {{ range where .Site.Pages "Section" "speaker" }}
@@ -73,6 +74,7 @@
 {{ $a = $a | append (slice .Title) }}
 {{ end }}
 {{ end }}
+{{ if not .Params.hideSpeaker }}
 <div>
     <span>
         <span class="speaker-title">Intervenant{{ if gt (len .Params.speakers) 1  }}s{{ end }} :</span>
@@ -80,6 +82,7 @@
                     href="{{ $speakerPath }}">{{- . -}}</a>{{ else }}{{- . -}}{{ end }}</span>{{ end }}</span>
     </span>
 </div>
+{{ end }}
 {{ end }}
 
 {{ if and (ge .Date now) (isset .Params "after") }}
