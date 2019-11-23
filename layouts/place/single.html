@@ -12,7 +12,7 @@
         </div>
         {{ if isset .Params "logo" }}
         <div>
-            <img src="mame_red_unique.png" style="max-height: 100px;">
+            <img src="{{ .Params.logo }}" style="max-height: 100px;">
         </div>
         {{ end }}
     </div>
