@@ -547,7 +547,7 @@ footer {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  color:red;
+  color: red;
   min-height: 100%;
 }
 
@@ -560,6 +560,31 @@ footer {
     li {
       list-style-type: disc;
       padding: 0.3em;
+    }
+  }
+}
+
+.speaker-name {
+  display: flex;
+  flex-direction: row;
+  border-bottom: 1px solid #036cad;;
+  justify-content: space-between;
+  margin: 1em 0 0.8em 0;
+  h3 {
+    border: none;
+    margin: 0;
+    padding: 0;
+  }
+  div {
+    display: flex;
+  flex-direction: row;
+  padding: 0 1em;
+    a {
+      font-size: 1.25em;
+      // font-size: 1.6em;
+      align-self: flex-end;
+      margin-bottom: 0.1em;
+      padding: 0 0.1em;
     }
   }
 }
