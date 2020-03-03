@@ -1,6 +1,22 @@
 {{ define "main" }}
 <h1>Les speakers</h1>
-{{ range .Pages }}
-<h5><a href="{{ .Permalink }}">{{ .Title }}</a></h5>
+{{ range sort .Pages "Title" }}
+<h5>
+    {{ $speakerName := .Title }}
+    {{ $count := 0 }}
+    
+    <a href="{{ .Permalink }}">{{ .Title }}</a>
+    (
+        {{ $a := slice "" }}
+        {{ range where .Site.Pages "Section" "event" }}
+        {{ range .Pages }}
+        {{ if in .Params.speakers $speakerName }}
+        {{ $a = $a | append (slice .Title) }}
+        {{ end }}
+        {{ end }}
+        {{ end }}
+        {{ add (len $a) -1 }}
+    )
+</h5>
 {{ end }}
 {{ end }}
