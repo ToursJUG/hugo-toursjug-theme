@@ -588,3 +588,39 @@ footer {
     }
   }
 }
+
+#speaker-desk{
+  display: flex;
+  flex-wrap: wrap;
+  height: 100%;
+  width: auto;
+  li {
+    border-radius: 1em;
+    flex-shrink: 0;
+    display: inline-block;
+    flex-grow: 1;
+    padding: 0 1em;
+    min-width: 20em;
+    max-width: 20em;
+    transition: 1.5s ease-out;
+    background-color: inherit;
+    h5 {
+      text-align: center;
+      a{
+      }
+    }
+    p {
+      transition: 0.8s ease-out;
+      color: transparent;
+    }
+    &:hover {
+      transition: 0.5s ease-out;
+      background-color: rgba(255, 195, 104, 0.3);
+      p {
+        transition: 0.8s ease-out;
+        color: inherit;
+      }
+        
+    }
+  }
+}
