@@ -121,6 +121,7 @@ ul {
     }
   }
 }
+
 #container {
   /*
   font-family: "Ubuntu", sans-serif;
@@ -444,6 +445,31 @@ aside {
   }
 }
 
+.sponsor {
+  h1 {
+    border-bottom: 1px solid;
+    width: 100%;
+  }
+  #information {
+    margin-bottom: 2em;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    div {
+      width: 45%;
+    }
+    .logo{
+      width: 40%;
+      display: flex;
+      justify-content: center;
+      img {
+        max-width: 80%; 
+        height: auto;
+      }
+    }
+  }
+}
+
 blockquote {
   padding-left: 1em;
   color: #877fd3;
@@ -498,7 +524,7 @@ footer {
 
 @media all and (min-width: 1200px) {
   aside {
-    min-width: 200px;
+    min-width: 220px;
 
     &.left {
       order: 1;
@@ -509,14 +535,14 @@ footer {
 
 @media all and (min-width: 950px) {
   #container {
-    background: #f7fbfc url("/images/toursJuggy_t08.png") no-repeat bottom 50px right 75px;
+    background: #f7fbfc url("/images/toursJuggy_t08.png") no-repeat bottom 50px right 220px;
   }
   main {
     flex-direction: row;
   }
   aside {
-    width: 200px;
-    min-width: 200px;
+    width: 220px;
+    min-width: 220px;
     &.right {
       order: 3;
     }
@@ -567,7 +593,7 @@ footer {
 .speaker-name {
   display: flex;
   flex-direction: row;
-  border-bottom: 1px solid #036cad;;
+  border-bottom: 1px solid #036cad;
   justify-content: space-between;
   margin: 1em 0 0.8em 0;
   h3 {
@@ -577,8 +603,8 @@ footer {
   }
   div {
     display: flex;
-  flex-direction: row;
-  padding: 0 1em;
+    flex-direction: row;
+    padding: 0 1em;
     a {
       font-size: 1.25em;
       // font-size: 1.6em;
@@ -588,6 +614,21 @@ footer {
     }
   }
 }
+
+main {
+  aside {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+  }
+}
+
+#sponsor {
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+}
+
 
 #speaker-desk{
   display: flex;
