@@ -15,5 +15,6 @@ hideSpeaker: false
 # eventbrite: "" # Id de l'inscription (la partie de l'URL sr trouvant après https://www.eventbrite.fr/e/ )
 # after: "" # Id (title urlizé d'un after) utilisé pour peupler la section after d'un evvent (exemple : apside-after-01)
 # youtube: "" # URL de la vidéo de la conférence
+# sponsors: [] # Tableau avec les nom des sponsors
 ---
 

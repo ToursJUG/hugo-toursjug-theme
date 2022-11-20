@@ -1,4 +1,4 @@
-<div id="sponsor">
+<div id="sponsor" style="visibility: hidden">
     {{ range where .Site.Pages "Section" "sponsor" }}
     {{ range .Pages.ByWeight }}
     <div>
@@ -6,7 +6,7 @@
         {{ if (hasPrefix .Params.image "/") }}
         <img src="{{ .Params.image}}" style="max-width: 90%; height: auto;">
         {{ else }}
-        <img src="/sponsor/{{- urlize .Title -}}/{{- .Params.image -}}" style="max-width: 90%; height: auto;">
+        <img src="./sponsor/{{- .Params.image -}}" style="max-width: 90%; height: auto;">
         {{ end }}
         {{ else }}
         {{ .Title }}

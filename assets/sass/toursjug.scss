@@ -121,6 +121,7 @@ ul {
     }
   }
 }
+
 #container {
   /*
   font-family: "Ubuntu", sans-serif;
@@ -439,6 +440,31 @@ aside {
       .gmap {
         margin-top: 0.5em;
         font-size: 0.8em;
+      }
+    }
+  }
+}
+
+.sponsor {
+  h1 {
+    border-bottom: 1px solid;
+    width: 100%;
+  }
+  #information {
+    margin-bottom: 2em;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    div {
+      width: 45%;
+    }
+    .logo{
+      width: 40%;
+      display: flex;
+      justify-content: center;
+      img {
+        max-width: 80%; 
+        height: auto;
       }
     }
   }
